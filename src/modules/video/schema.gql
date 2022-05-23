@@ -1,0 +1,35 @@
+type Query {
+    videos( pagination: Pagination = {} search:String ): [Video]!
+
+    video(userId: ID!): [Video]!
+
+    adminVideos: [Admin]!
+}
+
+type Mutation {
+    addVideo(videoName:String! viewFile:Upload!):Response!
+    deleteVideo(videoId:ID!): Response!
+    changeVideo(videoId:ID! videoName:String!): Response!
+}
+
+type Video {
+    videoId: ID!
+    userId: ID!
+    videoName: String!
+    viewFile: String!
+    createTime: Date!
+    createDate: Date!
+    downloadLink: Link!
+    size: Float!
+}
+
+type Admin {
+    videoId:ID!
+    userId: ID!
+    videoName: String!
+    viewFile: String!
+    createTime: Date!
+    createDate: Date!
+    downloadLink: Link!
+    size: Float!
+}

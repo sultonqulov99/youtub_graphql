@@ -1,0 +1,27 @@
+scalar Date
+scalar Link
+scalar Token
+scalar Upload
+
+enum Gender {
+    male
+    female
+}
+
+type AuthResponse {
+    status: Int!
+    message: String!
+    data: User
+    token: Token
+}
+
+type Response {
+    status: Int!
+    message: String!
+    data: Video
+}
+
+input Pagination {
+    page: Int
+    limit: Int
+}
